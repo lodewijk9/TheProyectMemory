@@ -1,13 +1,17 @@
-const AddWords = () => {
-    return ( 
-        <div>
-            <h1>AddWords+</h1>
-            <input type="text" placeholder="Palabra"/>
-            <input type="text" placeholder="Significado" />
-            <button>Guardar</button>
-        </div>
-        
-     );
+import React from "react";
+import NewWord from "./components/NewWord";
+import myStyle2 from  './style2.module.css'
+// This is the parent component
+
+export default class AddWords extends React.Component {
+
+    render() {
+        return ( 
+            <div className={myStyle2.dimensions}>
+                <h1 className={myStyle2.centrar}>AddWords+</h1>
+                {<NewWord/>}
+            </div>
+            
+        );
+    }
 }
- 
-export default AddWords;

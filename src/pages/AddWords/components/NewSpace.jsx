@@ -1,1 +1,0 @@
-// sacar 2 txt uno para la palabra y otro para el significado

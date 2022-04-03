@@ -1,0 +1,11 @@
+.dimension{
+    display:inline;
+    align-items: center;
+    width: calc((100% / 2));
+    height: calc(150px - 15px);
+    border-radius:5px;
+    
+}
+.dimension:hover{
+    background-color: powderblue;
+}
