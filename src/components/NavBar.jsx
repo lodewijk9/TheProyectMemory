@@ -13,7 +13,7 @@ const NavBar = () => {
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
                 <li className="nav-item active">
-                    <Link className="nav-link"  to="/nueva-palabra">Add New Word</Link>
+                    <Link className="nav-link"  to="/addNewWord">Add New Word</Link>
                 </li>
                 </ul>
             </div>

@@ -15,7 +15,7 @@ function App() {
                 <DisplayCards />
               </Route>
 
-              <Route path="/nueva-palabra">
+              <Route path="/addNewWord">
                 <AddWords />
               </Route>
 

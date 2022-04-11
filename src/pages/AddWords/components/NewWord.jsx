@@ -1,7 +1,7 @@
 // sacar 2 txt uno para la palabra y otro para el significado
 
 import { useState } from "react";
-import myStyle1 from "../components/style1.module.css"
+import myStyle1 from "../components/New_Word.module.css"
 
 const NewWord = (props) => {
 

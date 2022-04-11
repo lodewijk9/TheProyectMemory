@@ -1,6 +1,6 @@
 import React from "react";
 import NewWord from "./components/NewWord";
-import myStyle2 from  './style2.module.css'
+import myStyle2 from  './Add_words.module.css'
 // This is the parent component
 
 export default class AddWords extends React.Component {
