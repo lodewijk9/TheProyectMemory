@@ -1,43 +1,52 @@
 // sacar 2 txt uno para la palabra y otro para el significado
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import myStyle1 from "../components/New_Word.module.css"
+import { useDispatch, useSelector } from "react-redux";
+import { new_definition } from '../../../redux/slices/all_words'
 
 const NewWord = (props) => {
+    const { definitions }  = useSelector((state) => state.all_words || [] ) // destructure definition from store and then from all_words
+    const dispatch = useDispatch() // execute the reducers on the slices
 
+    const [rerender, setRerender] = useState(false); // forzar render
     const [word, setWord] = useState('')
     const [meaning, setMeaning] = useState('')
-    const [words, setWords] = useState([])
 
     const addNewDefinitions = ()=>{
         const definition = {"word":word,"meaning":meaning}
-        const dictionary = [...words, definition]
-        setWords(dictionary)
+        dispatch(new_definition(definition))
+        setRerender(!rerender)
     }
 
     const handleSubmit = (e)=>{
         e.preventDefault()
-
         addNewDefinitions()
-
         setWord('')
         setMeaning('')
-        
-        document.getElementById("laWord").focus()
-        console.log('Palabra guardada')
+
+        //alert('Definition saved successfully')
+
+        document.getElementById('laWord').focus()
     }
 
+    
+    useEffect(()=>{
+        console.log(definitions)
+    },[rerender]) // Forzar renderizado
+    
     return ( 
         <div className={myStyle1.centrar}>
             
             <form onSubmit={(e)=>{handleSubmit(e)}}>
-                <input type="text" onChange={(e)=>setWord(e.target.value)}     value={word}   id="laWord"   placeholder="Palabra"/>
-                <input type="text" onChange={(e)=>setMeaning(e.target.value)}  value={meaning}  placeholder="Significado" />
-                <button className={myStyle1.color} type="submit">Guardar</button>
+                <input type="text" onChange={(e)=>setWord(e.target.value)}     value={word}   id="laWord"   placeholder="Word"/>
+                <input type="text" onChange={(e)=>setMeaning(e.target.value)}  value={meaning}  placeholder="Meaning" />
+                <button className={myStyle1.color} type="submit">SAVE</button>
             </form>
 
         </div>
      );
 }
+
  
 export default NewWord;

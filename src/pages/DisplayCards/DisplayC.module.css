@@ -3,7 +3,7 @@
     grid-template-columns: 300px 300px;
     grid-template-rows: 300px 300px;
     grid-template-areas: "box1 box2"
-                         "box3 box3";
+                         "box3 box4";
     justify-content: center;
     background-color:#00F2A0;
 }
@@ -33,9 +33,18 @@
     background-color:#D5F200;
     width:100%;
     height: 100%;
-    display: flex;
+    display:flex;
     justify-content: center;
     align-items: center;
+}
+.box4{
+    grid-area: box4;
+    background-color:aqua;
+    width:100%;
+    height: 100%;
+    display: block;
+    text-align: center;
+    
 }
 .centrar{
     display: flex;
@@ -43,4 +52,31 @@
     align-items: center;
     background-color:white;
     border-radius:5px;
+}
+
+.btn_dimension{
+    position: relative;
+    width:50%;
+    height:30%;
+    top: 25%;
+}
+
+.Correct_plays{
+    border:2px solid black;
+    background-color:#D5F200;
+    border-radius:100%;
+    height:50px;
+    width:50px;
+}
+.Incorrect_plays{
+    border:2px solid black;
+    background-color:palevioletred;
+    border-radius:100%;
+    height:50px;
+    width:50px;
+}
+.Container_Score{
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
