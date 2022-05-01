@@ -1,0 +1,6 @@
+.divContent{
+    position:relative;
+    border: 7px solid rgba(255,255,255,0.4);
+    width: 40%;
+    top:50px;
+}

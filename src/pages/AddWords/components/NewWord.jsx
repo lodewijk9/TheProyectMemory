@@ -5,6 +5,7 @@ import myStyle1 from "../components/New_Word.module.css"
 import { useDispatch, useSelector } from "react-redux";
 import { new_definition } from '../../../redux/slices/all_words'
 
+
 const NewWord = (props) => {
     const { definitions }  = useSelector((state) => state.all_words || [] ) // destructure definition from store and then from all_words
     const dispatch = useDispatch() // execute the reducers on the slices
@@ -26,8 +27,7 @@ const NewWord = (props) => {
         setMeaning('')
 
         //alert('Definition saved successfully')
-
-        document.getElementById('laWord').focus()
+        document.getElementById("laWord").focus()
     }
 
     
@@ -39,8 +39,8 @@ const NewWord = (props) => {
         <div className={myStyle1.centrar}>
             
             <form onSubmit={(e)=>{handleSubmit(e)}}>
-                <input type="text" onChange={(e)=>setWord(e.target.value)}     value={word}   id="laWord"   placeholder="Word"/>
-                <input type="text" onChange={(e)=>setMeaning(e.target.value)}  value={meaning}  placeholder="Meaning" />
+                <input type="text" onChange={(e)=>setWord(e.target.value)}     value={word}   id="laWord"   placeholder="Word" required/>
+                <input type="text" onChange={(e)=>setMeaning(e.target.value)}  value={meaning}  placeholder="Meaning" required/>
                 <button className={myStyle1.color} type="submit">SAVE</button>
             </form>
 

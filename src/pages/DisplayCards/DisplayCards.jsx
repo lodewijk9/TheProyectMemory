@@ -10,7 +10,7 @@ class DisplayCards extends React.Component{
         this.state = {
             //all_words:[{word:"A", meaning:"A"},{word:"B", meaning:"B"},{word:"C", meaning:"C"},{word:"D", meaning:"D"}], //default values 
             all_words:this.props.definitions.definitions,
-            four_rnd_numbers: [0,1,2,3],
+            four_rnd_numbers: [0],
             one_rnd_number:0,
             stop:true,
             time:0,
@@ -134,10 +134,11 @@ class DisplayCards extends React.Component{
                 </div>
 
                 <div className={myStyleFront.box3}>
+                    <br /><br />
                     <h2>Speed</h2>
-                    <input type="radio" name="rate" id='Regular' value='Regular'/><label htmlFor='Regular' id='15' onClick={(e)=>{this.changeSpeed(e)}}>Regular</label> 
-                    <input type="radio" name="rate" id='Medium' value='Medium'/><label htmlFor='Medium' id='10' onClick={(e)=>{this.changeSpeed(e)}}>Medium</label> 
-                    <input type="radio" name="rate" id='High' value='High'/><label htmlFor='High'   id='5'onClick={(e)=>{this.changeSpeed(e)}}>High</label> 
+                    <label htmlFor='Regular' id='15' onClick={(e)=>{this.changeSpeed(e)}}><input type="radio" name="rate" id='Regular' value='Regular'/>Regular</label> <br />
+                    <label htmlFor='Medium' id='10' onClick={(e)=>{this.changeSpeed(e)}}><input type="radio" name="rate" id='Medium' value='Medium'/>Medium</label> <br />
+                    <label htmlFor='High'   id='5'onClick={(e)=>{this.changeSpeed(e)}}><input type="radio" name="rate" id='High' value='High'/>High</label> <br />
                 </div>
 
                 <div className={myStyleFront.box4}>
@@ -154,7 +155,7 @@ class DisplayCards extends React.Component{
                     </div>
 
                     <button 
-                            className={myStyleFront.btn_dimension} 
+                            className={this.state.stop?myStyleFront.btn_dimension_start: myStyleFront.btn_dimension_stop} 
                             type="button" 
                             onClick={()=>{this.shuffle_Cards_btn()}}>{this.state.stop?'START':'STOP'}
                     </button>

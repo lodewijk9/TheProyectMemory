@@ -11,11 +11,12 @@ function App() {
       <BrowserRouter>
         <NavBar />
           <Switch>
+            
               <Route exact path="/">
                 <DisplayCards />
               </Route>
 
-              <Route path="/addNewWord">
+              <Route path="/AddDefinition">
                 <AddWords />
               </Route>
 

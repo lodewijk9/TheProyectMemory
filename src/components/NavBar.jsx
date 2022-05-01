@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import '../components/navBar.css'
+//import { useDispatch, useSelector} from "react-redux";
+
 
 const NavBar = () => {
     return ( 
@@ -13,7 +15,7 @@ const NavBar = () => {
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
                 <li className="nav-item active">
-                    <Link className="nav-link"  to="/addNewWord">Add New Word</Link>
+                    <Link className="nav-link"  to="/AddDefinition">Add New Word</Link>
                 </li>
                 </ul>
             </div>
